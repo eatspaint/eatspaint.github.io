@@ -35,7 +35,15 @@ $base-active: #FEDD00;
   margin-bottom: auto;
 }
 
-// --- TABS ---
+// ---SLICK---
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+}
+.slider {
+  padding: 3px;
+}
+
+// ---TABS---
 .tab {
   cursor: pointer;
   @include box-text($base-inactive, darken($base-inactive, 5%), darken($base-inactive, 10%), darken($base-inactive, 15%), darken($base-inactive, 20%), darken($base-inactive, 25%));

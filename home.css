@@ -38,6 +38,12 @@
   margin-top: auto;
   margin-bottom: auto; }
 
+.slick-prev:before, .slick-next:before {
+  color: black !important; }
+
+.slider {
+  padding: 3px; }
+
 .tab {
   cursor: pointer;
   color: #00B5EE;
