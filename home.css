@@ -44,7 +44,7 @@
 .slider {
   padding: 3px; }
 
-@media (min-width: 400px) {
+@media (min-width: 550px) {
   .active {
     padding-bottom: 3rem; } }
 .tab {
