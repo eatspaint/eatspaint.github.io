@@ -43,6 +43,13 @@ $base-active: #FEDD00;
   padding: 3px;
 }
 
+// ---MOBILE---
+@media (min-width: 400px) {
+  .active {
+    padding-bottom: 3rem;
+  }
+}
+
 // ---TABS---
 .tab {
   cursor: pointer;

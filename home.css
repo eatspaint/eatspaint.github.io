@@ -44,6 +44,9 @@
 .slider {
   padding: 3px; }
 
+@media (min-width: 400px) {
+  .active {
+    padding-bottom: 3rem; } }
 .tab {
   cursor: pointer;
   color: #00B5EE;
