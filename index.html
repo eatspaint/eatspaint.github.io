@@ -1,167 +1,115 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>eatspaint</title>
-    <link rel="stylesheet" type="text/css" href="normalize.css">
-    <link rel="stylesheet" type="text/css" href="skeleton.css">
-    <link rel="stylesheet" type="text/css" href="home.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <script src="home.js"></script>
-    <script> if (/Mobi/.test(navigator.userAgent)) {window.location = '/old-index.html'}; </script>
+    <title>Christian E. Fuller</title>
+    <link type="text/css" href="normalize.css" rel="stylesheet"/>
+    <link type="text/css" href="skeleton.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
+    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
   </head>
   <body>
-    <div style='margin-top: 30px; margin-bottom: 30px;' class='container'>
-      <div class='row'>
-        <h1 class='auto-margin active one-third column tab' id='AboutTab' onClick="openTab('About')">Christian Fuller</h1>
-        <div class='auto-margin two-thirds column tab-content' id='About' style="display: block;">
-          <h5>I'm a vinyl junkie who loves to cook and code.</h5>
-          <p>
-            I believe that work should be hard, but fun. I strive to learn something new every day, whether it be building on the skills I already have, or picking up new ones. I enjoy leadership, and maintaining a highly-effective team, from any position within a team.
-          </p>
-          <p><a href='http://github.com/eatspaint' target='_blank'>Github</a> | <a href='https://www.linkedin.com/in/christianedwardfuller' target='_blank'>linkedIn</a> | <a href='mailto:cef2010@gmail.com?Subject=Hi%20Christian,%20I%20saw%20your%20site%20and%20want%20to%20hire%20you.'>Email Me</a></p>
-          <span>Use your keyboard arrow keys, or click the headings below to navigate.</span>
-        </div>
-      </div>
-      <hr class="hAbout hTechnical" style="display: block;"/>
-      <div class='row'>
-        <h1 class='auto-margin twelve columns tab' id='TechnicalTab' onClick="openTab('Technical')">Technical Skills</h1>
-        <div class='auto-margin two-thirds column tab-content' id='Technical'>
-          <h5>Languages:</h5>
-          <p>Ruby, Rails, Javascript, jQuery, React, HTML5, CSS3, Elixir, Phoenix, Redux, PHP, Drupal</p>
-          <h5>Web Tools/Concepts:</h5>
-          <p>Docker, Restful APIs, SQL, AJAX , Flux, Git, TDD</p>
-        </div>
-      </div>
-      <hr class='hTechnical hExperience'/>
-      <div class='row'>
-        <h1 class='auto-margin twelve columns tab' id='ExperienceTab' onClick="openTab('Experience')">Experience</h1>
-        <div class='auto-margin two-thirds column tab-content' id='Experience'>
-          <div class='ExperienceSlick'>
-            <div class='slider'>
-              <!-- Lolo -->
-              <h5>Web Developer, Lolo, llc</h5>
-              <p>Salt Lake City, UT > May 2016-Present | <a href='http://www.yesfitnessmusic.com/' target='_blank'>Yes! Fitness Music</a> | <a href='http://www.lolofit.com/' target='_blank'>lolo</a></p>
-              <ul>
-                <li>
-                  Used PHP & Drupal to build out a CMS/Commerce system to serve as an API for a client’s iOS/Android/Web app.
-                </li>
-                <li>
-                  I maintain multiple Rails apps that comprise a large scale solution for music distribution and royalties management, and develop front end features in React.
-                </li>
-              </ul>
-            </div>
-            <div class='slider'>
-              <!-- DevPoint Labs -->
-              <h5>Instructor, DevPoint Labs</h5>
-              <p>Salt Lake City, UT > Nov 2015-Present</p>
-              <ul>
-                <li>
-                  I apply my knowledge of Ruby on Rails, Javascript, React, HTML & CSS, and other concepts presented in the DevPoint Labs Full-Stack program to solidify the concepts with students during lecture and projects.
-                </li>
-                <li>
-                  I have applied my history of management and organizational roles to help structure the curriculum and day-to-day flow of the programs at DevPoint Labs.
-                </li>
-                <li>
-                  I used my development skills to quickly build out some utilities for use in the class:
-                  <ul>
-                    <li>Hackathon Scoring Ballot: <a href='http://dpl-vote.herokuapp.com/' target='_blank'>dpl-vote.herokuapp.com</a></li>
-                    <li>Student Submission Decompressor: <a href='http://github.com/eatspaint/assignment_decompressor' target='_blank'>github.com/eatspaint/assignment_decompressor</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class='slider'>
-              <!-- Exposure Tracker -->
-              <h5>Software Developer, Exposure Tracker</h5>
-              <p>Salt Lake City, UT > Nov 2015-Feb 2016 | <a href='http://exposuretrackerapp.com/' target='_blank'>Exposure Tracker</a></p>
-              <ul>
-                <li>
-                  I worked on the development of Exposure Tracker App and side products for TrackTrain, a company specializing in managing training and safety records for professionals.
-                </li>
-                <li>
-                  My daily work work included:
-                  <ul>
-                    <li>Backend maintenance, primarily in Ruby</li>
-                    <li>Building features for the front end with Javascript, HTML/CSS</li>
-                    <li>Building a separate usage & analytics application - Elliott - from the ground up with React.</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class='hExperience hProjects'/>
-      <div class='row'>
-        <h1 class='auto-margin twelve columns tab' id='ProjectsTab' onClick="openTab('Projects')">Projects</h1>
-        <div class='auto-margin two-thirds column tab-content' id='Projects'>
-          <div class='ProjectsSlick'>
-            <div class='slider'>
-              <h5>Apollo | <a href='http://apolloapollo.io/' target='_blank'>apolloapollo.io</a> | <a href='http://github.com/eatspaint/apollo/' target='_blank'>Github</a></h5>
-              <ul>
-                <li>Concept came about after the realization that nobody is great at DJing in the office</li>
-                <li>Allows users to access an office-wide Spotify “jukebox”</li>
-                <li>Future direction includes “festivals” feature that allows users to generate multiple playlists based on artists performing at a festival by dropping the lineup into a generator</li>
-              </ul>
-            </div>
-            <div class='slider'>
-              <h5>MarryMe | <a href='http://marrymeapp.herokuapp.com/' target='_blank'>marrymeapp.herokuapp.com</a> | <a href='https://github.com/eatspaint/marry_me'>Github</a></h5>
-              <ul>
-                <li>DevPoint Labs capstone project</li>
-                <li>Built with different UX in mind for couples & vendors</li>
-                <li>Involved hand-rolling a second set of authorizations for separate couple and vendor authentications</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class='hProjects hEducation'/>
-      <div class='row'>
-        <h1 class='auto-margin twelve columns tab' id='EducationTab' onClick="openTab('Education')">Education</h1>
-        <div class='auto-margin two-thirds column tab-content' id='Education'>
-          <div class="EducationSlick">
-            <div class="slider">
-              <h5>DevPoint Labs</h5>
-              <p>Salt Lake City, UT — Full-Stack Ruby on Rails, Fall 2015</p>
-              <ul>
-                <li>At DevPoint Labs, I learned both fundamental and advanced concepts of web development through team-based projects and daily lectures.</li>
-                <li>The languages/concepts taught included: Ruby/Rails, Javascript, HTML/CSS, Test Driven Development, SQL Database Management, Front End Frameworks, etc.</li>
-              </ul>
-            </div>
-            <div class="slider">
-              <h5>University of Missouri</h5>
-              <p>Columbia, MO — Electrical Engineering</p>
-              <ul>
-                <li>While at MU, I moved around the Engineering Department, but always stayed focused on programs that involved computing to some degree</li>
-                <li>Getting to work in languages like MATLAB, and using programs like AutoCAD through a console interface turned me on to the concepts of programming.</li>
-                <li>The logical patterns and problem solving skills I developed while at the University of Missouri have proven valuable to me in my career as a developer.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class='hEducation hExternal'/>
-      <div class='row'>
-        <h1 class='auto-margin twelve columns tab' id='ExternalTab' onClick="openTab('External')">Extras</h1>
-        <div class='auto-margin two-thirds column tab-content' id='External'>
-          <ul>
-            <li><a href='/old-index.html'>Can I just see all of this content on one page?</a></li>
-            <li><a href='/resume_08_16.pdf' target='_blank'>Printable Resume (PDF)</a></li>
-            <li><a href='https://github.com/eatspaint/pkdir' target='_blank'>I would like all of my file icons to be Pokémon.</a></li>
-            <li><a href='dpl_student_tips'>DPL Student Tips</a></li>
-            <li><a href='dpl_prep_work'>DPL Prep Work</a></li>
-            <li><a href='http://www.apolloapollo.io' target='_blank'>Apollo</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr class='hExternal'/>
-      <p style="color: #BBB !important; padding: 2rem 0;">*I do not personally condone, or partake in the eating of paint.</p>
-    </div>
+    <div id='content'></div>
+    <script type="text/babel">
+      const Router = window.ReactRouterDOM.HashRouter;
+      const Route =  window.ReactRouterDOM.Route;
+      const Link =  window.ReactRouterDOM.Link;
+      const Prompt =  window.ReactRouterDOM.Prompt;
+      const Switch = window.ReactRouterDOM.Switch;
+      const Redirect = window.ReactRouterDOM.Redirect;
+      const Styled = window.styled;
 
-    <script src="jquery-3.0.0.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+      const App = () => (
+        <div>
+          <StyledHeader />
+          <Main />
+        </div>
+      );
 
+      const Header = ({className}) => (
+        <header className={className}>
+          <nav>
+            <ul>
+              <li><Link to='/'>Hello</Link></li>
+              <li><Link to='/work'>Work</Link></li>
+              <li><Link to='/essence'>Essence</Link></li>
+            </ul>
+          </nav>
+        </header>
+      );
+
+      const StyledHeader = Styled.default(Header)`
+        color: #0ff;
+        a {
+          color: #f0f;
+          text-decoration: none;
+        }
+      `;
+
+      class Main extends React.Component {
+        render() {
+          return (
+            <main>
+              <Switch>
+                <Route exact path='/' component={Hello}/>
+                <Route path='/work' component={Work}/>
+                <Route path='/essence' component={Essence}/>
+              </Switch>
+            </main>
+          );
+        }
+      };
+
+      const Hello = () => (
+        <div>
+          <h2>Eatspaint says Hello</h2>
+        </div>
+      );
+
+      const Work = () => (
+        <div>
+          <h2>Work</h2>
+          <Switch>
+            <Route exact path='/work' component={AllWork}/>
+            <Route path='/work/:name' component={WorkDetail}/>
+          </Switch>
+        </div>
+      );
+
+      const AllWork = () => (
+        <div>
+          <h2>All Work</h2>
+        </div>
+      );
+
+      const WorkDetail = (props) => {
+        const job = props.match.params.name;
+        if (!job) {
+          return <div>Sorry, nothing here.</div>
+        }
+        return (
+          <div>
+            <h2>{job}</h2>
+          </div>
+        )
+      };
+
+      const Essence = () => (
+        <div>
+          <h2>Essence</h2>
+        </div>
+      );
+
+      ReactDOM.render(
+        <Router>
+          <App />
+        </Router>,
+        document.getElementById('content')
+      );
+    </script>
   </body>
 </html>
