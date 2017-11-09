@@ -5,6 +5,7 @@
     <title>Christian E. Fuller</title>
     <link type="text/css" href="normalize.css" rel="stylesheet"/>
     <link type="text/css" href="skeleton.css" rel="stylesheet"/>
+    <link type="text/css" href="fonts.css" rel="stylesheet"/>
     <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
@@ -18,36 +19,91 @@
       const Router = window.ReactRouterDOM.HashRouter;
       const Route =  window.ReactRouterDOM.Route;
       const Link =  window.ReactRouterDOM.Link;
+      const NavLink =  window.ReactRouterDOM.NavLink;
       const Prompt =  window.ReactRouterDOM.Prompt;
       const Switch = window.ReactRouterDOM.Switch;
       const Redirect = window.ReactRouterDOM.Redirect;
       const Styled = window.styled;
 
-      const App = () => (
-        <div>
+      const Palette = {
+        green: '#0E6B18',
+        red: '#E13833',
+        pink: '#FF767B',
+        lightPink: '#FFB1BB'
+      }
+
+      const App = ({className}) => (
+        <div className={className}>
           <StyledHeader />
           <Main />
         </div>
       );
+      const ContainedApp = Styled.default(App)`
+        margin-left: 103px;
+      `
 
-      const Header = ({className}) => (
+      const ActiveNavStyles = {color: Palette.red};
+      const Header = ({className, activeTab}) => (
         <header className={className}>
           <nav>
             <ul>
-              <li><Link to='/'>Hello</Link></li>
-              <li><Link to='/work'>Work</Link></li>
-              <li><Link to='/essence'>Essence</Link></li>
+              <li><StyledNavLink exact to='/' activeStyle={ActiveNavStyles}>Hello</StyledNavLink></li>
+              <li><StyledNavLink to='/skills' activeStyle={ActiveNavStyles}>Skills</StyledNavLink></li>
+              <li><StyledNavLink to='/work' activeStyle={ActiveNavStyles}>Work</StyledNavLink></li>
+              <li><StyledNavLink to='/essence' activeStyle={ActiveNavStyles}>Essence</StyledNavLink></li>
             </ul>
           </nav>
+          <img src='images/bittree.png'/>
         </header>
       );
-
-      const StyledHeader = Styled.default(Header)`
-        color: #0ff;
-        a {
-          color: #f0f;
-          text-decoration: none;
+      const StyledNavLink = Styled.default(NavLink)`
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 17px;
+        &:hover {
+          color: ${Palette.pink};
         }
+      `;
+      const StyledHeader = Styled.default(Header)`
+        margin-bottom: 47px;
+        ul {
+          margin: 0;
+          li {
+            display: inline-block;
+            padding: 18px;
+            margin: 0;
+          }
+          li:first-child {
+            padding-left: 0;
+          }
+        }
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 200px;
+          width: 200px;
+          z-index: -1;
+        }
+      `;
+
+      const StyledTitle = Styled.default.h1`
+        ${props => props.small && `
+          font-family: 'Bodoni 72 Bold', sans-serif;
+          font-size: 15px;
+          letter-spacing: 0.95px;
+          text-transform: uppercase;
+          line-height: 18px;
+          margin-bottom: 12px;
+        `}
+        ${props => props.large && `
+          font-family: 'Bodoni 72 Book', sans-serif;
+          font-size: 75px;
+          line-height: 98px;
+          margin-bottom: 24px;
+        `}
+        color: #333;
       `;
 
       class Main extends React.Component {
@@ -56,6 +112,7 @@
             <main>
               <Switch>
                 <Route exact path='/' component={Hello}/>
+                <Route path='/skills' component={Skills}/>
                 <Route path='/work' component={Work}/>
                 <Route path='/essence' component={Essence}/>
               </Switch>
@@ -65,14 +122,69 @@
       };
 
       const Hello = () => (
-        <div>
-          <h2>Eatspaint says Hello</h2>
-        </div>
+        <StyledBody>
+          <StyledTitle small>Full Stack Web Developer</StyledTitle>
+          <StyledTitle large>Christian E. Fuller</StyledTitle>
+          <p>
+            I&apos;m a vinyl junkie who loves to cook and code. I believe that work should be hard, but fun. I strive to learn something new every day, whether that be building on the skills I already have, or picking up new ones. I enjoy leadership, and maintaining a highly-effective team, from any position within a team.
+          </p>
+          <p>
+            Some of my proficiencies include: architecting extensible databases, building efficient APIs, & implementing beautiful user interfaces with attention paid to every last pixel.
+          </p>
+          <p>
+            I&apos;m currently lead Software Engineer at <a href='https://oddjobb.com' target='_blank'>OddJobb</a>. I do occasional freelance work on projects that inspire and graciously reward people for a job well done. Happy to talk about your project. Contact me.
+          </p>
+          <a className='btn' href='mailto:cef2010@gmail.com'>Contact</a>
+        </StyledBody>
       );
+      const StyledBody = Styled.default.div`
+        max-width: 550px;
+        p {
+          color: #333;
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 24px;
+        }
+        a {
+          color: ${Palette.red};
+          text-decoration: none;
+        }
+        .btn {
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          line-height: 17px;
+          padding: 9px 28px;
+          color: #fff;
+          background-color: ${Palette.pink};
+          border-radius: 2px;
+          border: none;
+          &:active {
+            background-color: ${Palette.lightPink};
+          }
+        }
+      `
+
+      const Skills = () => (
+        <div>
+          <StyledTitle large>Skills</StyledTitle>
+          <StyledTitle small>Languages I love:</StyledTitle>
+          <p>
+            Ruby, Rails, Javascript, React, HTML5/CSS3
+          </p>
+          <StyledTitle small>Languages I would love to learn more of:</StyledTitle>
+          <p>
+            Obj-C, Swift, Elixir, Phoenix
+          </p>
+          <StyledTitle small>Languages I would love to not work with again:</StyledTitle>
+          <p>
+            PHP, Drupal
+          </p>
+        </div>
+      )
 
       const Work = () => (
         <div>
-          <h2>Work</h2>
+          <StyledTitle large>Work</StyledTitle>
           <Switch>
             <Route exact path='/work' component={AllWork}/>
             <Route path='/work/:name' component={WorkDetail}/>
@@ -82,7 +194,7 @@
 
       const AllWork = () => (
         <div>
-          <h2>All Work</h2>
+          <StyledTitle small>All Work</StyledTitle>
         </div>
       );
 
@@ -100,13 +212,13 @@
 
       const Essence = () => (
         <div>
-          <h2>Essence</h2>
+          <StyledTitle large>Essence</StyledTitle>
         </div>
       );
 
       ReactDOM.render(
         <Router>
-          <App />
+          <ContainedApp />
         </Router>,
         document.getElementById('content')
       );
