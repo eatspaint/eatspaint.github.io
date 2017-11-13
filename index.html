@@ -167,20 +167,23 @@
       const Skills = () => (
         <div>
           <StyledTitle large>Skills</StyledTitle>
-          <StyledTitle small>Languages I love:</StyledTitle>
+          <SkillsStyledTitle small>Languages I love:</SkillsStyledTitle>
           <p>
             Ruby, Rails, Javascript, React, HTML5/CSS3
           </p>
-          <StyledTitle small>Languages I would love to learn more of:</StyledTitle>
+          <SkillsStyledTitle small>Languages I would love to learn more of:</SkillsStyledTitle>
           <p>
             Obj-C, Swift, Elixir, Phoenix
           </p>
-          <StyledTitle small>Languages I would love to not work with again:</StyledTitle>
+          <SkillsStyledTitle small>Languages I would love to not work with again:</SkillsStyledTitle>
           <p>
             PHP, Drupal
           </p>
         </div>
       )
+      const SkillsStyledTitle = Styled.default(StyledTitle)`
+        margin-bottom: 3px;
+      `
 
       const Work = () => (
         <div>
