@@ -187,6 +187,7 @@
 
       const Work = () => (
         <div>
+          <StyledTitle small>Coming Soon</StyledTitle>
           <StyledTitle large>Work</StyledTitle>
           <Switch>
             <Route exact path='/work' component={AllWork}/>
@@ -197,7 +198,10 @@
 
       const AllWork = () => (
         <div>
-          <StyledTitle small>All Work</StyledTitle>
+          <StyledBody>
+            <p>How about a resume in the meantime?</p>
+            <a className='btn' href='resume_11_17.pdf' target='_blank'>View Resume (PDF)</a>
+          </StyledBody>
         </div>
       );
 
@@ -215,7 +219,13 @@
 
       const Essence = () => (
         <div>
+          <StyledTitle small>Coming Soon</StyledTitle>
           <StyledTitle large>Essence</StyledTitle>
+          <StyledBody>
+            <img style={{maxWidth: '500px', paddingBottom: '24px',}} src='images/bros.png' />
+            <p>The not-so-stoked-about-Easter dude in this photograph is my little brother, Addison. He&apos;s a kick-ass UX/UI Designer who helped me come up with the designs for this website. We work <i>incredibly</i> well together.</p>
+            <p>Catch him at <a href='https://www.addisoncharlesfuller.com/' target='_blank'>addisoncharlesfuller.com</a></p>
+          </StyledBody>
         </div>
       );
 
