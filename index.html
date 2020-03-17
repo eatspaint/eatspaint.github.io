@@ -40,7 +40,10 @@
         </div>
       );
       const ContainedApp = Styled.default(App)`
-        margin-left: 103px;
+        margin: 0 20px 20px;
+        @media only screen and (min-width: 768px) {
+          margin-left: 103px;
+        }
       `
 
       const ActiveNavStyles = {color: Palette.red};
@@ -59,6 +62,7 @@
       );
       const StyledNavLink = Styled.default(NavLink)`
         color: #333;
+        background: #fff;
         text-decoration: none;
         font-size: 14px;
         line-height: 17px;
@@ -70,13 +74,23 @@
         margin-bottom: 47px;
         ul {
           margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
           li {
             display: inline-block;
-            padding: 18px;
+            padding: 12px;
             margin: 0;
           }
           li:first-child {
             padding-left: 0;
+          }
+          li:last-child {
+            padding-right: 0;
+          }
+          a {
+            display: inline-block;
+            padding: 6px;
           }
         }
         img {
@@ -170,11 +184,11 @@
           <StyledTitle large>Skills</StyledTitle>
           <SkillsStyledTitle small>Languages I love:</SkillsStyledTitle>
           <p>
-            Ruby, Rails, Javascript, React, HTML5/CSS3
+            Ruby, Rails, Javascript, React, HTML5/CSS3, Processing/P5
           </p>
           <SkillsStyledTitle small>Languages I would love to learn more of:</SkillsStyledTitle>
           <p>
-            Obj-C, Swift, Elixir, Phoenix
+            Rust, Obj-C, Swift, Elixir, Phoenix
           </p>
           <SkillsStyledTitle small>Languages I would love to not work with again:</SkillsStyledTitle>
           <p>
@@ -201,7 +215,7 @@
         <div>
           <StyledBody>
             <p>How about a resume in the meantime?</p>
-            <a className='btn' href='resume_06_18.pdf' target='_blank'>View Resume (PDF)</a>
+            <a className='btn' href='resume_03_20.pdf' target='_blank'>View Resume (PDF)</a>
           </StyledBody>
         </div>
       );
@@ -218,12 +232,21 @@
         )
       };
 
+      const BrosPic = Styled.default.img`
+        width: 500px;
+        max-width: calc(100vw - 40px);
+        @media only screen and (min-width: 768px) {
+          max-width: calc(100vw - 103px);
+        }
+        padding-bottom: 24px;
+      `;
+
       const Essence = () => (
         <div>
           <StyledTitle small>Coming Soon</StyledTitle>
           <StyledTitle large>Essence</StyledTitle>
           <StyledBody>
-            <img style={{width: '500px', maxWidth: 'calc(100vw - 103px)', paddingBottom: '24px',}} src='images/bros.png' />
+            <BrosPic src='images/bros.png' />
             <p>The not-so-stoked-about-Easter dude in this photograph is my little brother, Addison. He&apos;s a kick-ass UX/UI Designer who helped me come up with the designs for this website. We work <i>incredibly</i> well together.</p>
             <p>Catch him at <a href='https://www.addisoncharlesfuller.com/' target='_blank'>addisoncharlesfuller.com</a></p>
           </StyledBody>
